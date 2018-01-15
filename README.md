@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
 
+## Description
+
+- Implemented authorization template-driven, validate (email, pass)
+- Refactored TODO form-driven, added tag to edit/add new todo
+- Filters using pipes
+- Tag filter  - custom control using NG_VALUE_ACCESSOR
+- Filter method added to service, is called onSubmit
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
