@@ -1,0 +1,9 @@
+<div>
+  <input type="text" [ngModel]="inputValue" (ngModelChange)="newTerm($event)" placeholder="Enter Tag">
+
+      <ul *ngIf="!hideOptions">
+          <li *ngFor="let opt of options" (click)="select(opt)">{{opt}}</li>
+        </ul>
+
+
+  </div>

@@ -1,0 +1,13 @@
+<app-tags-control (onSubmit)="tagSearch($event); filterByTags()"></app-tags-control>
+<div >
+   Search for Title: <input type="text" [(ngModel)]="searchTitle" />
+</div>
+<div >
+  Search for Id: <input type="text" [(ngModel)]="searchId"/>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let todo of todos | filter: searchTitle:searchId"  (click)="viewTodo(todo.id)">{{todo.id}} {{todo.title}} </li>
+  </ul>
+</div>
+<button (click)="newTodo()">Add Todo</button>

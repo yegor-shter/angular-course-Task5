@@ -1,0 +1,24 @@
+
+<form  (ngSubmit)="printForm(); addUser()" >
+  <div class="FormControl">
+    <input type="name" placeholder="email"  [(ngModel)]="user.email"  name="useremail" #useremail="ngModel" required email >
+  </div>
+  <ul *ngIf="useremail.dirty && useremail.invalid">
+    <li *ngIf="useremail.errors.required">email must be entered here</li>
+    <li *ngIf="useremail.errors.email">please enter correct email address</li>
+  </ul>
+  <div class="FormControl">
+    <input type="password" placeholder="password" [(ngModel)]="user.password"  name="pass" #pass="ngModel" required minlength="6" appLatinOnly maxlength="20">
+  </div>
+  <ul *ngIf="pass.dirty && pass.invalid">
+    <li *ngIf="pass.errors.required">please enter password</li>
+    <li *ngIf="pass.errors.minlength">u need to enter minimum 6 chars</li>
+    <li *ngIf="pass.errors.latinOnlyErr">please enter latin chars or symbols only</li>
+  </ul>
+
+
+
+  <button type="submit" >Submit form</button>
+</form>
+
+

@@ -1,0 +1,32 @@
+<div class="TodoEdit" >
+  <form novalidate [formGroup]="userForm" (ngSubmit)="save()">
+    <h3>Edit Task</h3>
+    <div class="FormControl">
+      <label for="title" >
+        <span>Title</span>
+        <input name="title" formControlName="title" />
+      </label>
+
+    </div>
+    <div class="FormControl">
+      <label for="text">Description</label>
+      <input name="text" formControlName="text"/>
+    </div>
+    <div class="FormControl">
+      <label for="status">Status</label>
+      <input name="status" formControlName="status" />
+    </div>
+    <div formArrayName= "tags">
+      <div *ngFor="let tag of tags.controls; let idx=index">
+        <label for="tag">Tag</label>
+        <input name="tag" formControlName='{{idx}}' placeholder="Enter tag" />
+        <button (click)="deleteTagField(idx)">Delete this tag</button>
+        <button type="" (click)="addTagField()"> Add new tag</button>
+
+      </div>
+    </div>
+
+    <button type="submit">Save</button>
+
+  </form>
+</div>

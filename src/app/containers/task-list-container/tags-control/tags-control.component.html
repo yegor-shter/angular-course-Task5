@@ -1,0 +1,15 @@
+
+
+<div>
+  <form [formGroup]="tagForm" (ngSubmit)="save()">
+      <div formArrayName="tagsArray">
+          <div *ngFor="let tag of tagsArray.controls; let idx=index">
+            <app-autocoplete-tag  name="tag" type="text"  [formControlName]="idx" ></app-autocoplete-tag>
+            <button (click)="deleteTagsField(idx)">X</button>
+            <button (click)="addTagField()">Add</button>
+          </div>
+          </div>
+          <button type="submit">Search by tags</button>
+  </form>
+</div>
+
